@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: eureka-service # 名称  eureka.instance.appname 的默认值
+    
+server:
+  port: 7001 # 端口   eureka.instance.non-secure-port 的默认值 
+  
+  
