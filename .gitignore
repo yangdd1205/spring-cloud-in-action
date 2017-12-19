@@ -29,3 +29,7 @@ hs_err_pid*
 target/
 build/
 .gradle
+bin/
+out/
+.mvn
+.springBeans

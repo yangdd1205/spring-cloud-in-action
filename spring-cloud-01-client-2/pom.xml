@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.yangdongdong</groupId>
-	<artifactId>spring-cloud-01-eureka-a</artifactId>
+	<artifactId>spring-cloud-01-client-2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-01-eureka-a</name>
-	<description>spring-cloud-01-eureka-a</description>
+	<name>spring-cloud-01-client</name>
+	<description>spring-cloud-01-client-2</description>
 
 	<parent>
 	    <groupId>org.springframework.boot</groupId>
@@ -38,7 +38,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -48,7 +48,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>org.yangdongdong.springcloud.EurekaServerApplication</mainClass>
+					<mainClass>org.yangdongdong.springcloud.ClientApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -1,8 +1,22 @@
 spring:
   application:
-    name: eureka-service # 名称  eureka.instance.appname 的默认值
+    name: eureka-service # 名称 
     
 server:
-  port: 7001 # 端口   eureka.instance.non-secure-port 的默认值 
-  
-  
+  port: 7001 # 端口   
+
+eureka:
+  instance:
+    # 单点配置
+    #hostname: localhost
+    
+    # 高可用
+    hostname: eureka1
+  client:
+    ## 单点配置
+    #register-with-eureka: false # 是否将自身当作 client 注册，默认值为  true。
+    #fetch-registry: false # 抓取注册的服务信息，默认值为 true
+    
+    ## 高可用配置
+    service-url:
+      defaultZone: http://eureka2:7002/eureka
