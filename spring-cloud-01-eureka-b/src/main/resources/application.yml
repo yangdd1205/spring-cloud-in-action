@@ -7,10 +7,7 @@ server:
 
 eureka:
   instance:
-    # 单点配置
     #hostname: localhost
-    
-    # 高可用
     hostname: eureka2 
   client:
     ## 单点配置
