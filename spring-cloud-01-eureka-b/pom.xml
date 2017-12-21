@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.yangdongdong</groupId>
-	<artifactId>spring-cloud-01-eureka-a</artifactId>
+	<artifactId>spring-cloud-01-eureka-b</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-01-eureka-a</name>
-	<description>spring-cloud-01-eureka-a</description>
+	<name>spring-cloud-01-eureka-b</name>
+	<description>spring-cloud-01-eureka-b</description>
 
 	<parent>
 	    <groupId>org.springframework.boot</groupId>
