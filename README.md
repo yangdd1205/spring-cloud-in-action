@@ -12,7 +12,7 @@
 
 1. [Spring Cloud 简介](http://yangdongdong.org/2017/12/17/introduction-to-spring-cloud)
 2. [Spring Cloud Eureka：服务注册与发现](http://yangdongdong.org/2017/12/20/spring-cloud-eureka)
-3. - [ ] [Spring Cloud Ribbon：负载均衡](#)
+3. - [ ] [Spring Cloud Ribbon：负载均衡](#) （预计12月23日完成）
 4. - [ ] [Spring Cloud Hystrix：断路器](#)
 5. - [ ] [Spring Cloud Feign：代理](#)
 6. - [ ] [Spring Cloud Zuul：网关](#)
