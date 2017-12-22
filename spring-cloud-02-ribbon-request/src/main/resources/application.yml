@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: request
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka/ # 一个
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/ # 多个
