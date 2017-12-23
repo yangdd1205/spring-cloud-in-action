@@ -9,6 +9,8 @@ eureka:
   instance:
     #hostname: localhost
     hostname: eureka1
+    lease-renewal-interval-in-seconds: 10 # 客户端向注册中心发送心跳的时间间隔 默认值30
+    lease-expiration-duration-in-seconds: 120 # 租期到期时间，也就是注册中心收到客户端最后一次心跳的间隔时间，如果超过则服务下线 默认值 90
   client:
     ## 单点配置
     #register-with-eureka: false # 是否将自身当作 client 注册，默认值为  true。

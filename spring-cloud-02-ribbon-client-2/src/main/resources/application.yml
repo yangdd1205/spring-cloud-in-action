@@ -4,6 +4,9 @@ spring:
 server:
   port: 8002
 eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 客户端向注册中心发送心跳的时间间隔 默认值30
+    lease-expiration-duration-in-seconds: 120 # 租期到期时间，也就是注册中心收到客户端最后一次心跳的间隔时间，如果超过则服务下线 默认值 90
   client:
     service-url:
       #defaultZone: http://localhost:7001/eureka/ # 一个

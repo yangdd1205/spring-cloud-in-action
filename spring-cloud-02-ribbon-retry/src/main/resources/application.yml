@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: retry
+server:
+  port: 9002
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 客户端向注册中心发送心跳的时间间隔 默认值30
+    lease-expiration-duration-in-seconds: 120 # 租期到期时间，也就是注册中心收到客户端最后一次心跳的间隔时间，如果超过则服务下线 默认值 90
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka/ # 一个
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/ # 多个
+      
+custom:
+  http: 
+    connect-timeout: 1000
+    connection-request-timeout: 1000 
+    read-timeout: 3000 
+
+# 格式 <clientName>.<nameSpace>.<propertyName>=<value>
+client: # 服务名
+  ribbon:
+    OkToRetryOnAllOperations: true # 允许所有该服务的所有操作都可以重试 
+    MaxAutoRetriesNextServer: 1  # 重试时切换实例的次数（不包含第一次请求）
+    MaxAutoRetries: 5 # 重试次数（不包含第一次请求）
+    # 只适应ribbon组件 下面这个配置 不会生效~~~
+    # ConnectTimeout: 250   # 链接超时时间
+    # ReadTimeout: 3000     # 处理超时时间
+
+
+       
