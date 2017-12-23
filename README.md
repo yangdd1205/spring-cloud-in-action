@@ -12,8 +12,14 @@
 
 1. [Spring Cloud 简介](http://yangdongdong.org/2017/12/17/introduction-to-spring-cloud)
 2. [Spring Cloud Eureka：服务注册与发现](http://yangdongdong.org/2017/12/20/spring-cloud-eureka)
-3. - [ ] [Spring Cloud Ribbon：负载均衡](#) （预计12月23日完成）
-4. - [ ] [Spring Cloud Hystrix：断路器](#)
+   * Eureka Server
+   * Eureka Client
+   * Eureka 的高可用
+   * 服务注册与发现机制
+3. [Spring Cloud Ribbon：负载均衡](http://yangdongdong.org/2017/12/23/spring-cloud-ribbon/)
+   * RestTemplate
+   * Spring Retry 失败重试
+4. - [ ] [Spring Cloud Hystrix：断路器](#)  (预计12月30日完成)
 5. - [ ] [Spring Cloud Feign：代理](#)
 6. - [ ] [Spring Cloud Zuul：网关](#)
 7. - [ ] [Spring Cloud Config：配置中心](#)
