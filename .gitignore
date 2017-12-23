@@ -33,3 +33,4 @@ bin/
 out/
 .mvn
 .springBeans
+.DS_Store
