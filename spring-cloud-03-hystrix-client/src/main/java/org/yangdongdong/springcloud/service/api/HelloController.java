@@ -17,10 +17,10 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
-    public String hi() throws InterruptedException {
+    public String hi(String name) throws InterruptedException {
         TimeUnit.SECONDS.sleep(5);
-        System.out.println("hi hystrix!");
-        return "hi hystrix!";
+        System.out.println("hi " + name + "!");
+        return "hi " + name + "!";
     }
 
     @RequestMapping(value = "/request", method = RequestMethod.GET)

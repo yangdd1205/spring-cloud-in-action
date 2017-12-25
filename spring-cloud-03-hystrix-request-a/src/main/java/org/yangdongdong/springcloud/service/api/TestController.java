@@ -22,13 +22,11 @@ public class TestController {
         return helloService.handler();
     }
 
-    
     @RequestMapping(value = "/hystrix-hi", method = RequestMethod.GET)
-    public String hi() {
-        return helloService.callHi();
+    public String hi(String name) {
+        return helloService.callHi(name);
     }
-    
-    
+
     @RequestMapping(value = "/hystrix-request", method = RequestMethod.GET)
     public String request() {
         return helloService.callRequest();

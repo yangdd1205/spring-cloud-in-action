@@ -37,13 +37,13 @@ public class HelloService {
 
     @HystrixCommand(commandKey = "hiKey", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "8000") }, fallbackMethod = "callHiFailback")
-    public String callHi() {
-        return restTemplate.getForEntity("http://client/hi", String.class).getBody();
+    public String callHi(String name) {
+        return restTemplate.getForEntity("http://client/hi?name=" + name, String.class).getBody();
     }
 
-    public String callHiFailback() {
-        System.err.println("-------- 执行降级策略 -------");
-        return "-------- 执行降级策略 -------";
+    public String callHiFailback(String name) {
+        System.err.println("--------hi " + name + " 执行降级策略 -------");
+        return "--------hi " + name + " 执行降级策略 -------";
     }
 
     @HystrixCommand(fallbackMethod = "callRequestFailback")

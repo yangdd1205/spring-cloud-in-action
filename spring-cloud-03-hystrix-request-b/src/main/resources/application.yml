@@ -13,7 +13,7 @@ eureka:
       defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/ # 多个
 
 ## 断路器超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2000
       
 custom:
   http: 
