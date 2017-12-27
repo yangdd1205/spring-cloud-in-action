@@ -21,8 +21,8 @@ public class HelloService {
     }
 
     public String callHelloFailback() {
-        System.err.println("-------- 执行降级策略 -------");
-        return "-------- 执行降级策略 -------";
+        System.err.println("callHello 执行降级策略");
+        return "callHelloFailback";
     }
 
     @HystrixCommand(fallbackMethod = "handlerFailback", ignoreExceptions = { FileNotFoundException.class })
@@ -42,8 +42,8 @@ public class HelloService {
     }
 
     public String callHiFailback(String name) {
-        System.err.println("--------hi " + name + " 执行降级策略 -------");
-        return "--------hi " + name + " 执行降级策略 -------";
+        System.err.println("callHi 执行降级策略");
+        return "callHiFailback";
     }
 
     @HystrixCommand(fallbackMethod = "callRequestFailback")
@@ -52,8 +52,8 @@ public class HelloService {
     }
 
     public String callRequestFailback() {
-        System.err.println("-------- 执行降级策略 -------");
-        return "-------- 执行降级策略 -------";
+        System.err.println("callRequest 执行降级策略");
+        return "callRequestFailback";
     }
 
 }
