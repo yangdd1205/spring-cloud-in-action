@@ -31,4 +31,10 @@ public class TestController {
     public String request() {
         return helloService.callRequest();
     }
+
+    @RequestMapping(value = "/hystrix-circuit-breaker", method = RequestMethod.GET)
+    public String circuitBreaker() {
+        return helloService.callCircuitBreaker();
+    }
+
 }

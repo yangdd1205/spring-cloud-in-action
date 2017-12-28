@@ -56,4 +56,18 @@ public class HelloService {
         return "callRequestFailback";
     }
 
+    @HystrixCommand(fallbackMethod = "callCircuitBreakerFailback", commandKey = "circuitBreakerKey", commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"), // 请求总数下限
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "20"), // 错误百分比下限
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000") }) // 休眠时间窗
+    public String callCircuitBreaker() {
+        System.out.println("callCircuitBreaker 主逻辑");
+        return restTemplate.getForEntity("http://client/circuitBreaker", String.class).getBody();
+    }
+
+    public String callCircuitBreakerFailback() {
+        System.err.println("callCircuitBreaker 执行降级策略");
+        return "callCircuitBreakerFailback";
+    }
+
 }

@@ -28,4 +28,10 @@ public class HelloController {
         System.out.println("request...");
         return "request";
     }
+    
+   @RequestMapping(value="/circuitBreaker",method=RequestMethod.GET)
+   public String circuitBreaker() throws InterruptedException {
+       TimeUnit.SECONDS.sleep(3);
+       return "Circuit Breaker";
+   }
 }
