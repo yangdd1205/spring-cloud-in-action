@@ -5,8 +5,8 @@ server:
   port: 6002
 
 turbine:
-  app-config: request  # 指定需要收集监控信息的服务名
-  cluster-name-expression: "'default'"
+  app-config: request  # 指定需要收集监控信息的服务名，多个服务用英文下的逗号分隔
+  cluster-name-expression: "'default'" #指定集群名称，默认表达式appName
   combine-host-port: true  
     
 eureka:
