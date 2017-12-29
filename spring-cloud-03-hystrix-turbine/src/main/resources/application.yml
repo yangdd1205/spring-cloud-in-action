@@ -3,9 +3,6 @@ spring:
     name: hystrix-turbine
 server:
   port: 6002
- 
-management:
-  port: 6003
 
 turbine:
   app-config: request  # 指定需要收集监控信息的服务名
