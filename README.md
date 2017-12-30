@@ -19,7 +19,7 @@
 3. [Spring Cloud Ribbon：负载均衡](http://yangdongdong.org/2017/12/23/spring-cloud-ribbon/)
    * RestTemplate
    * Spring Retry 失败重试
-4. - [ ] [Spring Cloud Hystrix：断路器](http://yangdongdong.org/2017/12/30/spring-cloud-hystrix/)
+4. [Spring Cloud Hystrix：断路器](http://yangdongdong.org/2017/12/30/spring-cloud-hystrix/)
    * Hystrix
    * Dashboard
    * Turbine
