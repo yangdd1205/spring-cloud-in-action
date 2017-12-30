@@ -24,8 +24,8 @@ client: # 服务名
     OkToRetryOnAllOperations: true # 允许所有该服务的所有操作都可以重试 
     MaxAutoRetriesNextServer: 1  # 参与重试的服务个数（不包含第一个服务）
     MaxAutoRetries: 5 # 重试次数（不包含第一次请求）
-    # 只适应ribbon组件 下面这个配置 不会生效~~~
-    # ConnectTimeout: 250   # 链接超时时间
+    # 只使用ribbon组件 下面这个配置 不会生效~~~
+    # ConnectTimeout: 250   # 连接超时时间
     # ReadTimeout: 3000     # 处理超时时间
 
 
