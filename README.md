@@ -23,8 +23,9 @@
    * Hystrix
    * Dashboard
    * Turbine
-5. - [ ] [Spring Cloud Feign：代理](#) （预计完成时间 1月7日）
-6. - [ ] [Spring Cloud Zuul：网关](#)
+5. [Spring Cloud Feign：声明式 REST 客户端](http://yangdongdong.org/2017/12/31/spring-cloud-feign)
+   * 负载均衡、断路器、请求重试以及踩坑
+6. - [ ] [Spring Cloud Zuul：网关](#)（预计1月7日完成）
 7. - [ ] [Spring Cloud Config：配置中心](#)
 8. - [ ] [Spring Cloud Bus：消息总线](#)
 8. - [ ] [Spring Cloud Stream：消息队列](#)
