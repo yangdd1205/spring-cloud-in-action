@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: consumer
+server:
+  port: 9001
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 客户端向注册中心发送心跳的时间间隔 默认值30
+    lease-expiration-duration-in-seconds: 30 # 租期到期时间，也就是注册中心收到客户端最后一次心跳的间隔时间，如果超过则服务下线 默认值 90
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ # 一个
+      #defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/ # 多个
+ 
+## 断路器超时时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 30000
+      
+feign:
+  hystrix:
+    enabled: true # 启动 feign 的断路器功能
+  compression:
+    request:
+      mime-types: # 支持的格式
+      - text/html,application/xml,application/json
+      min-request-size: 2048 # 超过就压缩
+      enabled: true # 请求是否压缩
+    response:
+      enabled: true # 响应是否压缩
+      
+provider:
+  ribbon:
+    OkToRetryOnAllOperations: true # 允许所有该服务的所有操作都可以重试 
+    MaxAutoRetriesNextServer: 1  # 参与重试的服务个数（不包含第一个服务）
+    MaxAutoRetries: 5 # 重试次数（不包含第一次请求）
+    # 这两个属性在单独使用 Ribbon 时，是不生效的，但是使用 Feign 就行
+    ConnectTimeout: 2000   # 连接超时时间
+    ReadTimeout: 3000     # 处理超时时间
+
+
+
+
+##### 发现深坑 /(ㄒoㄒ)/~~ ，一定要加下面这段配置 ######
+
+# disable Ribbon's cicruit breaker and rely soley on Hystrix.
+# this helps to avoid confusion.
+# see https://github.com/Netflix/ribbon/issues/15
+niws:
+  loadbalancer:
+    availabilityFilteringRule:
+      filterCircuitTripped: false
