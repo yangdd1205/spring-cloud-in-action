@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<form action="http://localhost:6001/hi-service/upload"
+			enctype="multipart/form-data" method="post">
+			<input type="file" name="file"> <br /> <input type="submit"
+				value="普通上传">
+		</form>
+	</div>
+	<div>
+		<form action="http://localhost:8002/upload"
+			enctype="multipart/form-data" method="post">
+			<input type="file" name="file"> <br /> <input type="submit"
+				value="绕过 zuul 的 dispatchServlet 进行上传">
+		</form>
+	</div>
+	   <div>
+        <form action="http://localhost:6001/hi-service/upload"
+            enctype="multipart/form-data" method="post">
+            <input type="file" name="file"> <br /> <input type="submit"
+                value="绕过 zuul 的 dispatchServlet 进行上传">
+        </form>
+    </div>
+</body>
+</html>
