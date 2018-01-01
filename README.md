@@ -2,6 +2,10 @@
 
 介绍了 Spring Cloud 常用的组件，外加 Spirng Cloud 实战小项目。欢迎 Star 和 Fork。
 
+## 版本
+
+使用 Edgware 版本。注意 Edgware 版本中，重命名了很多 starter 的 Artifact ID。虽然在 Edgware 版中，原 Artifact ID 依然可用，使用已过时的 starter 将记录一个警告，并在其中使用新启动程序的名称，新旧名的对照表可以去 [Spring Cloud Edgware Release Notes](https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Edgware-Release-Notes)。
+
 ## 准备
 
 * JDK 8
