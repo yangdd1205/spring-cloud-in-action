@@ -13,11 +13,11 @@ public class HelloController {
         System.out.println("hello service");
         return "hello!";
     }
-   
-    @RequestMapping(value="/userInfo",method=RequestMethod.GET)
-    public String auth(@RequestHeader("userInfo")String userInfo) {
+
+    @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+    public String auth(@RequestHeader("userInfo") String userInfo, String id) {
+        System.out.println("id:" + id);
         return userInfo;
-        
     }
-    
+
 }

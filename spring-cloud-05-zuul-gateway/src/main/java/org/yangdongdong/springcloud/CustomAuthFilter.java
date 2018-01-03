@@ -12,7 +12,7 @@ import com.netflix.zuul.context.RequestContext;
 public class CustomAuthFilter extends ZuulFilter {
 
     private static final String TOKEN_AUTH = "123456";
-    
+
     /**
      * filter 具体的逻辑
      */
@@ -21,25 +21,23 @@ public class CustomAuthFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String uri = request.getRequestURI();
-        if(uri.equals("/hi-service/upload") || uri.equals("/zuul/hi-service/upload")) {
+        if (uri.equals("/hi-service/upload") || uri.equals("/zuul/hi-service/upload")) {
             return ctx;
         }
         String token = request.getHeader("x-auth-token");
-
         if (StringUtils.isEmpty(token)) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             ctx.setResponseBody("no token");
             return null;
         }
-        if(TOKEN_AUTH.equals(token)) {
-            ctx.addZuulRequestHeader("userInfo", "{\"name\":\"Tom\",\"age\":18}");
-        }else {
+        if (!TOKEN_AUTH.equals(token)) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             ctx.setResponseBody("token auth fail");
-            return null; 
+            return null;
         }
+        ctx.addZuulRequestHeader("userInfo", "{\"name\":\"Tom\",\"age\":18}");
         return ctx;
     }
 
@@ -62,8 +60,15 @@ public class CustomAuthFilter extends ZuulFilter {
     /**
      * filter 执行的时机
      *
-     * pre 表示在请求被路由之前执行， route 表示在请求被路由中执行， post 表示在请求被路由之后执行， error
-     * 表示在请求发生错误时执行，static 表示不知道
+     * pre 表示在请求被路由之前执行
+     * 
+     * route 表示在请求被路由中执行
+     * 
+     * post 表示在请求被路由之后执行
+     * 
+     * error 表示在请求发生错误时执行
+     * 
+     * static 特殊的 Filter 具体的可以看 StaticResponseFilter，它允许从 Zuul 本身生成响应，而不是将请求转发到源。
      */
     @Override
     public String filterType() {

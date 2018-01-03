@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class HiServiceZuulFallBackProvider implements FallbackProvider {
 
     /**
-     * 指定要熔断的服务名字
+     * 指定服务名字
      */
     @Override
     public String getRoute() {
@@ -29,13 +29,14 @@ public class HiServiceZuulFallBackProvider implements FallbackProvider {
             @Override
             public HttpHeaders getHeaders() {
                 HttpHeaders headers = new HttpHeaders();
-                headers.setContentType(MediaType.APPLICATION_JSON);
+                headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
                 return null;
             }
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream("service error. retry...".getBytes("UTF-8"));
+                String result = "{\"result:\":\"bad request\"}";
+                return new ByteArrayInputStream(result.getBytes("UTF-8"));
             }
 
             /**
@@ -82,7 +83,8 @@ public class HiServiceZuulFallBackProvider implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream("service error...111.... retry...".getBytes("UTF-8"));
+                String result = "{\"result:\":\"error\"}";
+                return new ByteArrayInputStream(result.getBytes("UTF-8"));
             }
 
             /**
@@ -98,7 +100,7 @@ public class HiServiceZuulFallBackProvider implements FallbackProvider {
              */
             @Override
             public HttpStatus getStatusCode() throws IOException {
-                return HttpStatus.BAD_REQUEST;
+                return HttpStatus.INTERNAL_SERVER_ERROR;
             }
 
             /**
