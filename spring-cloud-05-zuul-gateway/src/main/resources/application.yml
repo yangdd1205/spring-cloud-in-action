@@ -16,6 +16,7 @@ zuul:
     api-hello:
       path: /hello-service/**
       service-id: hello
+      sensitive-headers: # blacklist 敏感头信息会被过滤，不设置的话 默认值是 Cookie,Set-Cookie,Authorization
     api-hi:
       path: /hi-service/**
       service-id: hi          
