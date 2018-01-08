@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-server # 名称 
+  cloud:
+    config:
+      url: http://localhost:4001/
+      profile: dev
+      lable: config
+    
+server:
+  port: 4002 # 端口   
