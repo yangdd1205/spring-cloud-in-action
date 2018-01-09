@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/yangdd1205/spring-cloud-master/
-          default-label: config
+          default-label: config # 可以是 commit id，branch name, tag name
           #search-paths:
           #- 
     
