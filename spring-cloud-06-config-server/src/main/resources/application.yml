@@ -5,10 +5,12 @@ spring:
     config:
       server:
         git:
+          #uri: file:///e:/git/config-repo # 使用本地仓库（用于测试），格式为：file://${user.home}/config-repo 如果是 Windows 则是 file:///${user.home}/config-repo
           uri: https://github.com/yangdd1205/spring-cloud-master/
-          default-label: config # 可以是 commit id，branch name, tag name
-          #search-paths:
-          #- 
-    
+          #username: 用户名
+          #password: 密码
+          default-label: config # 可以是 commit id，branch name, tag name，默认值为 master
+          #search-paths: # 表示除了在根目录搜索配置文件，还可以在一下目录搜索
+          #- user          
 server:
   port: 4001 # 端口   
