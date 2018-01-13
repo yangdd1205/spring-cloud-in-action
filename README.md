@@ -32,8 +32,11 @@
 6. [Spring Cloud Zuul：网关](http://yangdongdong.org/2018/01/07/spring-cloud-zuul/)
     * Filter
     * File Upload
-7. - [ ] [Spring Cloud Config：配置中心](#) (预计完成时间1月14号)
-8. - [ ] [Spring Cloud Bus：消息总线](#)
+7. [Spring Cloud Config：分布式配置中心](http://yangdongdong.org/2018/01/13/spring-cloud-config/)
+    * Config Server
+    * Config Client
+    * 高可用
+8. - [ ] [Spring Cloud Bus：消息总线](预计完成时间1月21日)
 8. - [ ] [Spring Cloud Stream：消息队列](#)
 9. - [ ] [Spring Cloud 实战：Token 网关登录认证](#)
 
