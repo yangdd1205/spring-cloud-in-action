@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.yangdongdong</groupId>
-	<artifactId>spring-cloud-06-config-server</artifactId>
+	<artifactId>spring-cloud-06-config-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-06-config-server</name>
-	<description>spring-cloud-06-config-server</description>
+	<name>spring-cloud-06-config-eureka</name>
+	<description>spring-cloud-06-config-eureka</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.9.RELEASE</version>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>1.5.9.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -38,12 +38,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-		      <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
 	</dependencies>
 
 	<build>
@@ -52,7 +48,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>org.yangdongdong.springcloud.Application</mainClass>
+					<mainClass>org.yangdongdong.springcloud.EurekaServerApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

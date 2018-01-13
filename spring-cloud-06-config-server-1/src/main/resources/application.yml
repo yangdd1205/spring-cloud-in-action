@@ -13,7 +13,7 @@ spring:
           #search-paths: # 表示除了在根目录搜索配置文件，还可以在一下目录搜索
           #- user          
 server:
-  port: 4001 # 端口   
+  port: 4003 # 端口   
   
 eureka:
   instance:
@@ -22,4 +22,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka/ # 一个  
-  
