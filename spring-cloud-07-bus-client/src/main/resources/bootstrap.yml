@@ -1,0 +1,21 @@
+spring:
+  application: 
+    name: client
+  cloud:
+    config:
+      uri: http://localhost:4001/ ##表示配置中心的地址，直接指定 Config Server 地址
+      profile: dev
+      #label: config
+    stream:
+      kafka:
+        binder:
+          zk-nodes: 192.168.222.130:2181
+          brokers: 192.168.222.130:9092
+        
+management:
+  security:
+    enabled: false
+    
+server:
+  port: 4002 # 端口   
+  
