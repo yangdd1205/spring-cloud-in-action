@@ -36,9 +36,7 @@
     * Config Server
     * Config Client
     * 高可用
-8. - [ ] [Spring Cloud Bus：消息总线](预计完成时间1月21日)
-8. - [ ] [Spring Cloud Stream：消息队列](#)
-9. - [ ] [Spring Cloud 实战：Token 网关登录认证](#)
+8. [Spring Cloud Bus：消息总线](http://yangdongdong.org/2018/01/21/spring-cloud-bus/)
 
 ## 我的博客
 
