@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.yangdongdong</groupId>
-	<artifactId>spring-cloud-04-feign-provider-a</artifactId>
+	<artifactId>spring-cloud-04-feign-provider-b</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-04-feign-provider-a</name>
-	<description>spring-cloud-04-feign-provider-a</description>
+	<name>spring-cloud-04-feign-provider-b</name>
+	<description>spring-cloud-04-feign-provider-b</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
