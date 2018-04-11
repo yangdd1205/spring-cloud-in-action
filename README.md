@@ -1,6 +1,6 @@
 # Spring Cloud 实战
 
-介绍了 Spring Cloud 常用的组件，外加 Spirng Cloud 实战小项目。欢迎 Star 和 Fork。
+介绍了 Spring Cloud 常用的组件。欢迎 Star 和 Fork。
 
 ## 版本
 
